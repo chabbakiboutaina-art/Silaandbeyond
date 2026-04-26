@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sila & Beyond – Amour Complice | Couple Planner</title>
+<meta name="description" content="Amour Complice – Le couple planner pour se reconnecter, grandir ensemble et créer des souvenirs inoubliables. 52 activités guidées, format A5, 150 pages.">
+<meta name="keywords" content="planner couple, carnet de couple, journal de couple, cadeau couple, cadeau anniversaire couple, cadeau Saint-Valentin, activité couple, amour complice">
+<meta property="og:title" content="Sila & Beyond – Amour Complice">
+<meta property="og:description" content="52 expériences guidées pour vous reconnecter et créer des souvenirs inoubliables à deux.">
+<meta property="og:image" content="./public/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+<!-- SVG LOGO SYMBOL -->
+<svg style="display:none">
+  <symbol id="sib-logo" viewBox="0 0 44 44">
+    <circle cx="15" cy="19" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="29" cy="25" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
+  </symbol>
+</svg>
+
+<!-- ──── NAV ──── -->
+<nav id="navbar">
+  <a class="nav-logo" href="#" onclick="showPage('home')">
+    <svg class="logo-icon" viewBox="0 0 44 44"><use href="#sib-logo"/></svg>
+    <span class="nav-brand">Sila &amp; Beyond</span>
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')">Accueil</a></li>
+    <li><a onclick="showPage('product')">Le Planner</a></li>
+    <li><a onclick="showPage('about')">À propos</a></li>
+    <li><a onclick="showPage('faq')">FAQ</a></li>
+    <li><a onclick="showPage('contact')">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="cart-icon" onclick="toggleCart()" aria-label="Panier">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+    </div>
+    <button class="nav-cta" onclick="showPage('product')">Acheter — 49 €</button>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a onclick="showPage('home');closeMobileMenu()">Accueil</a></li>
+    <li><a onclick="showPage('product');closeMobileMenu()">Le Planner</a></li>
+    <li><a onclick="showPage('about');closeMobileMenu()">À propos</a></li>
+    <li><a onclick="showPage('faq');closeMobileMenu()">FAQ</a></li>
+    <li><a onclick="showPage('contact');closeMobileMenu()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE : ACCUEIL
+══════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <span class="hero-kicker">pour les amoureux</span>
+      <h1 class="hero-title">
+        Un an d'amour<br>
+        et de <em>complicité</em>,<br>
+        pensé pour vous.
+      </h1>
+      <p class="hero-sub">
+        52 expériences guidées pour vous reconnecter, grandir ensemble
+        et créer des souvenirs inoubliables à deux.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('product')">Acheter le planner</button>
+        <button class="btn-ghost" onclick="document.getElementById('concept').scrollIntoView({behavior:'smooth'})">Découvrir le concept</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img class="hero-photo" src="./public/hero.jpg" alt="Sila & Beyond – Amour Complice lifestyle">
+      <div class="hero-overlay"></div>
+      <div class="hero-pill">
+        <div class="hero-pill-top">Amour Complice</div>
+        <div class="hero-pill-val">49 €</div>
+        <div class="hero-pill-sub">Couple Planner · Format A5</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">★★★★★ Aimé par les couples</div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">✦ Qualité premium</div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">◎ Idée cadeau parfaite</div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">♡ Créé avec amour</div>
+  </div>
+
+  <!-- CONCEPT -->
+  <section id="concept" class="section">
+    <span class="eyebrow">notre conviction</span>
+    <h2 class="section-title">L'amour grandit quand<br>on en prend soin.</h2>
+    <div class="gold-line"></div>
+    <p class="section-body">Entre la routine, le stress et le quotidien, la connexion peut parfois s'effacer. Amour Complice aide les couples à recréer des moments d'attention, de dialogue et de complicité.</p>
+    <div class="benefits-wrap">
+      <div class="benefit">
+        <div class="benefit-num">01</div>
+        <div class="benefit-name">Intimité</div>
+        <p class="benefit-desc">Renforcez votre connexion émotionnelle à travers des rituels guidés et des conversations sincères.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">02</div>
+        <div class="benefit-name">Aventure</div>
+        <p class="benefit-desc">Sortez de la routine et vivez de nouvelles expériences inoubliables ensemble.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">03</div>
+        <div class="benefit-name">Créativité</div>
+        <p class="benefit-desc">Amusez-vous et redécouvrez-vous autrement, à deux, semaine après semaine.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-num">04</div>
+        <div class="benefit-name">Bien-être</div>
+        <p class="benefit-desc">Grandissez individuellement pour mieux avancer ensemble vers vos rêves.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIDE -->
+  <section class="inside-section">
+    <span class="eyebrow">ce qui vous attend</span>
+    <h2 class="section-title">Plus qu'un planner,<br>une expérience de couple.</h2>
+    <div class="inside-grid">
+      <ul class="inside-list">
+        <li><span class="li-dash">—</span><span class="li-text">52 activités et défis à vivre ensemble, semaine après semaine</span></li>
+        <li><span class="li-dash">—</span><span class="li-text">Des check-ins de couple pour évaluer votre connexion</span></li>
+        <li><span class="li-dash">—</span><span class="li-text">Des pages de gratitude pour célébrer l'essentiel</span></li>
+        <li><span class="li-dash">—</span><span class="li-text">Des exercices autour des langages de l'amour</span></li>
+        <li><span class="li-dash">—</span><span class="li-text">Un vision board de couple pour vos rêves communs</span></li>
+        <li><span class="li-dash">—</span><span class="li-text">Des to-do lists pour organiser vos projets à deux</span></li>
+        <li><span class="li-dash">—</span><span class="li-text">Des pages pour planifier vos voyages et escapades</span></li>
+        <li><span class="li-dash">—</span><span class="li-text">Un bilan annuel pour célébrer votre évolution</span></li>
+      </ul>
+      <div class="inside-card">
+        <div class="inside-card-head">Les 4 thématiques</div>
+        <div class="theme-row">
+          <span class="theme-tag">♡ Intimité</span>
+          <span class="theme-tag">✦ Aventure</span>
+          <span class="theme-tag">◎ Créativité</span>
+          <span class="theme-tag">⟡ Bien-être</span>
+        </div>
+        <div class="spec-grid">
+          <div class="spec-cell"><span class="spec-val">A5</span><span class="spec-lbl">Format</span></div>
+          <div class="spec-cell"><span class="spec-val">150</span><span class="spec-lbl">Pages</span></div>
+          <div class="spec-cell"><span class="spec-val">52</span><span class="spec-lbl">Activités</span></div>
+          <div class="spec-cell"><span class="spec-val">49€</span><span class="spec-lbl">Prix</span></div>
+        </div>
+        <button class="inside-cta" onclick="showPage('product')">Découvrir le planner →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT -->
+  <div class="gift-section">
+    <div class="gift-left">
+      <span class="eyebrow">idée cadeau</span>
+      <h2 class="section-title">Le cadeau parfait<br>pour célébrer l'amour.</h2>
+      <div class="gold-line"></div>
+      <p class="section-body" style="max-width:100%;">Pour un anniversaire, un mariage, la Saint-Valentin ou simplement pour rappeler à l'autre que votre relation mérite du temps et de l'attention.</p>
+    </div>
+    <div class="gift-right">
+      <div class="gift-deco-circle" style="width:220px;height:220px;top:-60px;right:-60px;"></div>
+      <div class="gift-deco-circle" style="width:140px;height:140px;bottom:-40px;left:-40px;"></div>
+      <div class="gift-script">pour toutes les occasions</div>
+      <div class="gift-occasions">
+        <span class="occ-tag">Anniversaire</span>
+        <span class="occ-tag">Mariage</span>
+        <span class="occ-tag">Saint-Valentin</span>
+        <span class="occ-tag">Fiançailles</span>
+        <span class="occ-tag">Cadeau surprise</span>
+        <span class="occ-tag">Noël</span>
+      </div>
+      <div class="gift-price">49 €</div>
+      <button class="gift-btn" onclick="showPage('product');addToCart();">Offrir Amour Complice</button>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <span class="final-script">votre histoire vous attend</span>
+    <h2 class="section-title">Commencez à écrire votre<br>plus belle histoire à deux.</h2>
+    <p class="section-body">Un planner, deux amoureux, une année entière de moments précieux.</p>
+    <button class="btn-primary" style="padding:1rem 3rem;" onclick="showPage('product')">Acheter maintenant — 49 €</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-row">
+          <svg width="30" height="30" viewBox="0 0 44 44" style="color:rgba(255,255,255,.6)"><use href="#sib-logo"/></svg>
+          <span class="footer-brand-name">Sila &amp; Beyond</span>
+        </div>
+        <p class="footer-tagline">Nous croyons que les relations les plus précieuses ont besoin d'attention, de temps et d'intention pour s'épanouir.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Accueil</a></li>
+          <li><a onclick="showPage('product')">Le Planner</a></li>
+          <li><a onclick="showPage('about')">À propos</a></li>
+          <li><a onclick="showPage('faq')">FAQ</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">Livraison &amp; retours</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sila &amp; Beyond · Tous droits réservés</p>
+      <p>Fait avec <span class="footer-gold">♡</span> pour tous les amoureux</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE : PRODUIT
+══════════════════════════════════════ -->
+<div id="page-product" class="page">
+  <div class="product-layout">
+    <div class="prod-gallery">
+      <div style="text-align:center;">
+        <img class="prod-photo" src="./public/planner.jpg" alt="Amour Complice – Couple Planner ouvert">
+        <p style="font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--muted);margin-top:1.2rem;">150 pages · Format A5</p>
+      </div>
+    </div>
+    <div class="prod-info">
+      <span class="prod-badge">Édition Premium · Non daté</span>
+      <h1 class="prod-title">Amour Complice<br><em>Couple Planner</em></h1>
+      <div style="margin:0.5rem 0;display:flex;align-items:center;gap:0.8rem;">
+        <span class="stars">★★★★★</span>
+        <span style="font-size:0.72rem;color:var(--muted);">Aimé par les couples</span>
+      </div>
+      <div class="prod-price">49 €</div>
+      <p class="prod-desc">Un planner élégant et guidé, imaginé pour aider les couples à se reconnecter à travers des rituels, des activités hebdomadaires et des conversations sincères.</p>
+      <div class="detail-list">
+        <div class="detail-row"><span class="d-label">Format</span><span class="d-val">A5 · 14,8 × 21 cm</span></div>
+        <div class="detail-row"><span class="d-label">Pages</span><span class="d-val">150 pages</span></div>
+        <div class="detail-row"><span class="d-label">Activités</span><span class="d-val">52 activités &amp; défis guidés</span></div>
+        <div class="detail-row"><span class="d-label">Thématiques</span><span class="d-val">Intimité · Aventure · Créativité · Bien-être</span></div>
+        <div class="detail-row"><span class="d-label">Utilisation</span><span class="d-val">Non daté — commencez à tout moment</span></div>
+        <div class="detail-row"><span class="d-label">Idéal pour</span><span class="d-val">Anniversaire · Saint-Valentin · Mariage</span></div>
+        <div class="detail-row"><span class="d-label">Design</span><span class="d-val">Premium et élégant</span></div>
+      </div>
+      <button class="add-btn" id="addCartBtn" onclick="addToCart();this.textContent='✓ Ajouté au panier';this.classList.add('added');">Ajouter au panier</button>
+      <p class="prod-note">Livraison soignée · Emballage cadeau disponible · Paiement sécurisé</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE : À PROPOS
+══════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="pg-header">
+    <div class="about-logo-wrap">
+      <svg width="36" height="36" viewBox="0 0 44 44"><use href="#sib-logo"/></svg>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;">Sila &amp; Beyond</span>
+    </div>
+    <span class="eyebrow">qui sommes-nous</span>
+    <h1 class="section-title">Notre histoire</h1>
+  </div>
+  <div class="about-body">
+    <p>Nous sommes deux sœurs de cœur, unies par des valeurs communes et une même conviction : l'amour ne doit jamais être considéré comme acquis.</p>
+    <p>En tant qu'épouses et mamans, nous avons appris que les relations les plus précieuses ont besoin d'attention, de temps et d'intention pour s'épanouir. Chaque jour est une opportunité de se choisir à nouveau, de se redécouvrir, de grandir ensemble.</p>
+    <p>C'est de cette conviction qu'est né Sila &amp; Beyond.</p>
+    <p>Avec Amour Complice, nous avons voulu créer un compagnon de route pour les couples : un espace doux, guidé et inspirant pour se retrouver, mieux se comprendre et faire grandir leur relation. Un livre qui rappelle, jour après jour, la beauté et la magie de l'amour véritable.</p>
+    <div class="about-vals">
+      <div class="val-item">
+        <span class="val-icon">♡</span>
+        <div class="val-name">Authenticité</div>
+        <p class="val-text">Chaque mot vient du cœur. Nous partageons ce que nous vivons réellement.</p>
+      </div>
+      <div class="val-item">
+        <span class="val-icon">✦</span>
+        <div class="val-name">Intention</div>
+        <p class="val-text">L'amour mérite du temps et de l'attention. Nous le croyons profondément.</p>
+      </div>
+      <div class="val-item">
+        <span class="val-icon">⟡</span>
+        <div class="val-name">Croissance</div>
+        <p class="val-text">Les relations qui évoluent sont celles qui durent. Nous vous aidons à grandir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE : FAQ
+══════════════════════════════════════ -->
+<div id="page-faq" class="page">
+  <div class="pg-header">
+    <span class="eyebrow">vos questions</span>
+    <h1 class="section-title">Foire aux questions</h1>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Ce planner est-il adapté aux nouveaux couples ?<span class="faq-arrow">+</span></button>
+      <div class="faq-a"><p>Oui. Il a été pensé pour tous les couples, qu'ils soient ensemble depuis quelques mois ou plusieurs années. Chaque relation bénéficiera de ces moments d'attention partagée.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">À quelle fréquence faut-il l'utiliser ?<span class="faq-arrow">+</span></button>
+      <div class="faq-a"><p>Idéalement une fois par semaine, pour accompagner chacune des 52 semaines de l'année. Mais vous pouvez avancer entièrement à votre rythme — le planner est non daté pour vous offrir cette liberté.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Est-ce une bonne idée cadeau ?<span class="faq-arrow">+</span></button>
+      <div class="faq-a"><p>Absolument. C'est un cadeau symbolique, utile et profondément émotionnel — parfait pour un anniversaire, un mariage, la Saint-Valentin ou simplement pour dire "notre relation mérite du soin."</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Le planner est-il daté ?<span class="faq-arrow">+</span></button>
+      <div class="faq-a"><p>Non, il est entièrement non daté. Vous pouvez commencer à tout moment de l'année, sans aucune pression. Le seul bon moment pour commencer, c'est maintenant.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Convient-il à tous les types de couples ?<span class="faq-arrow">+</span></button>
+      <div class="faq-a"><p>Oui, Amour Complice a été conçu pour accompagner toutes les histoires d'amour. L'amour prend mille formes — le planner s'adapte à chacune d'elles.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Que contient exactement le planner ?<span class="faq-arrow">+</span></button>
+      <div class="faq-a"><p>150 pages soigneusement conçues : 52 activités et défis, des exercices de couple, des pages de gratitude, des check-ins, un vision board partagé, une section voyages et un bilan annuel complet.</p></div>
+    </div>
+    <div class="faq-contact">
+      <p>Vous avez une autre question ?</p>
+      <button class="btn-primary" onclick="showPage('contact')">Nous contacter</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE : CONTACT
+══════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="pg-header">
+    <span class="eyebrow">écrivez-nous</span>
+    <h1 class="section-title">Une question ?</h1>
+  </div>
+  <div class="contact-wrap">
+    <p class="contact-intro">Nous serions ravies de vous aider. Écrivez-nous pour toute question concernant le planner, votre commande ou notre univers.</p>
+    <div id="contactForm">
+      <div class="form-group">
+        <label class="form-label" for="name">Nom</label>
+        <input class="form-input" id="name" type="text" placeholder="Votre prénom">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" id="email" type="email" placeholder="votre@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitContact()">Envoyer le message</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <span class="success-script">Merci !</span>
+      <p>Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais avec tout notre soin.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ──── CART DRAWER ──── -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Panier">
+  <div class="cart-head">
+    <span class="cart-head-title">Votre panier</span>
+    <button class="cart-close" onclick="toggleCart()" aria-label="Fermer">×</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <span class="cart-empty-script">♡</span>
+      <p>Votre panier est vide.</p>
+      <button class="btn-primary" onclick="toggleCart();showPage('product');">Découvrir le planner</button>
+    </div>
+    <div id="cartItems" style="display:none">
+      <div class="cart-item-wrap">
+        <div class="cart-thumb">Amour<br>Complice</div>
+        <div class="cart-item-body">
+          <div class="cart-item-name">Amour Complice</div>
+          <div class="cart-item-sub">Couple Planner · Format A5</div>
+          <div class="cart-item-price">49 €</div>
+          <div class="cart-qty-row">
+            <button class="qty-btn" onclick="updateQty(-1)" aria-label="Diminuer">−</button>
+            <span class="qty-val" id="cartQtyVal">1</span>
+            <button class="qty-btn" onclick="updateQty(1)" aria-label="Augmenter">+</button>
+            <button class="cart-remove" onclick="removeFromCart()">Retirer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-total-row">
+      <span class="cart-total-lbl">Total</span>
+      <span class="cart-total-val" id="cartTotalVal">49 €</span>
+    </div>
+    <button class="checkout-btn">Passer la commande →</button>
+    <p class="cart-secure">Paiement 100% sécurisé · Livraison soignée</p>
+  </div>
+</div>
+
+<!-- ──── NEWSLETTER POPUP ──── -->
+<div class="nl-overlay" id="nlOverlay" role="dialog" aria-label="Newsletter">
+  <div class="nl-modal">
+    <div class="nl-left">
+      <div class="nl-left-logo">
+        <svg width="28" height="28" viewBox="0 0 44 44" style="color:rgba(255,255,255,.6)"><use href="#sib-logo"/></svg>
+        <span class="nl-left-brand">Sila &amp; Beyond</span>
+      </div>
+      <div class="nl-script">♡</div>
+      <div class="nl-headline">Rejoignez notre communauté d'amoureux</div>
+      <p class="nl-sub">Inspirations, conseils de couple et offres exclusives directement dans votre boîte mail.</p>
+    </div>
+    <div class="nl-right">
+      <button class="nl-close" onclick="closeNl()" aria-label="Fermer">×</button>
+      <div class="nl-right-title">Restez connectés</div>
+      <p class="nl-right-sub">Recevez nos inspirations pour nourrir votre relation au quotidien.</p>
+      <label class="nl-label" for="nl-name">Prénom</label>
+      <input class="nl-input" id="nl-name" type="text" placeholder="Votre prénom">
+      <label class="nl-label" for="nl-email">Email</label>
+      <input class="nl-input" id="nl-email" type="email" placeholder="votre@email.com">
+      <button class="nl-btn" onclick="closeNl()">M'inscrire à la newsletter</button>
+      <span class="nl-skip" onclick="closeNl()">Non merci, continuer sans m'inscrire</span>
+    </div>
+  </div>
+</div>
+
+<script src="./src/main.js"></script>
+</body>
+</html>
